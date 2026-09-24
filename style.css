@@ -84,3 +84,22 @@ button:hover {
     color: #555;
     font-size: 11px;
 }
+
+.mission-button {
+    display: inline-block;
+    background: #ff3b3b;
+    color: white;
+    text-decoration: none;
+    padding: 16px 30px;
+    font-size: 15px;
+    font-weight: bold;
+    letter-spacing: 1px;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.mission-button:hover {
+    background: white;
+    color: black;
+    transform: scale(1.05);
+}
