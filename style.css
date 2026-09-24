@@ -103,3 +103,73 @@ button:hover {
     color: black;
     transform: scale(1.05);
 }
+
+.briefing {
+    min-height: 100vh;
+    max-width: 850px;
+    margin: auto;
+    padding: 80px 30px;
+}
+
+.briefing h1 {
+    font-size: clamp(50px, 9vw, 100px);
+    line-height: 0.9;
+    margin-bottom: 30px;
+}
+
+.intro {
+    color: #aaa;
+    font-size: 20px;
+    margin-bottom: 50px;
+}
+
+.briefing-card {
+    border-left: 4px solid #ff3b3b;
+    background: #111;
+    padding: 30px;
+    margin-bottom: 40px;
+}
+
+.briefing-card h2,
+.rules h2 {
+    font-size: 14px;
+    letter-spacing: 3px;
+    color: #ff3b3b;
+    margin-bottom: 20px;
+}
+
+.briefing-card p {
+    color: #ccc;
+    line-height: 1.7;
+    margin-bottom: 15px;
+}
+
+.rules {
+    margin-bottom: 40px;
+}
+
+.rules p {
+    border-bottom: 1px solid #222;
+    padding: 18px 0;
+    color: #ccc;
+}
+
+.rules span {
+    color: #ff3b3b;
+    font-weight: bold;
+    margin-right: 20px;
+}
+
+.warning-box {
+    border: 1px dashed #555;
+    padding: 25px;
+    margin-bottom: 40px;
+    color: #999;
+}
+
+.warning-box p:first-child {
+    color: #ff3b3b;
+    font-weight: bold;
+    letter-spacing: 2px;
+    margin-bottom: 10px;
+}
