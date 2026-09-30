@@ -173,3 +173,256 @@ button:hover {
     letter-spacing: 2px;
     margin-bottom: 10px;
 }
+
+/* =========================================
+   MISSION BRIEFING
+   ========================================= */
+
+.briefing-page {
+    min-height: 100vh;
+    max-width: 1000px;
+    margin: auto;
+    padding: 50px 35px 80px;
+}
+
+
+/* HEADER */
+
+.page-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #252525;
+    padding-bottom: 18px;
+    margin-bottom: 90px;
+}
+
+.file-number {
+    color: #555;
+    font-size: 11px;
+    letter-spacing: 2px;
+}
+
+
+/* TITLE */
+
+.briefing-title {
+    margin-bottom: 100px;
+}
+
+.section-label {
+    color: #ff3b3b;
+    font-size: 12px;
+    font-weight: bold;
+    letter-spacing: 4px;
+    margin-bottom: 25px;
+}
+
+.briefing-title h1 {
+    font-size: clamp(55px, 10vw, 110px);
+    line-height: 0.88;
+    letter-spacing: -4px;
+    margin-bottom: 35px;
+}
+
+.intro-text {
+    color: #888;
+    font-size: 19px;
+    max-width: 600px;
+}
+
+
+/* SECTIONS */
+
+.briefing-section {
+    display: grid;
+    grid-template-columns: 90px 1fr;
+    gap: 30px;
+
+    border-top: 1px solid #252525;
+
+    padding: 55px 0;
+}
+
+.section-number {
+    color: #ff3b3b;
+    font-size: 13px;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+.section-content h2 {
+    font-size: 14px;
+    letter-spacing: 3px;
+    margin-bottom: 25px;
+}
+
+.section-content > p {
+    max-width: 650px;
+    color: #aaa;
+    font-size: 17px;
+    line-height: 1.8;
+    margin-bottom: 18px;
+}
+
+
+/* PARAMETERS */
+
+.parameter {
+    display: grid;
+    grid-template-columns: 190px 1fr;
+
+    border-bottom: 1px solid #202020;
+
+    padding: 20px 0;
+}
+
+.parameter span {
+    color: #ff3b3b;
+    font-size: 11px;
+    font-weight: bold;
+    letter-spacing: 1.5px;
+}
+
+.parameter p {
+    color: #aaa;
+    line-height: 1.6;
+}
+
+
+/* RULES */
+
+.rules {
+    list-style: none;
+    counter-reset: rules;
+    padding: 0;
+    margin: 0;
+    max-width: 700px;
+}
+
+.rules li {
+    counter-increment: rules;
+
+    position: relative;
+
+    border-bottom: 1px solid #202020;
+
+    padding: 18px 0 18px 45px;
+
+    color: #aaa;
+    line-height: 1.5;
+}
+
+.rules li::before {
+    content: "0" counter(rules);
+
+    position: absolute;
+    left: 0;
+
+    color: #ff3b3b;
+    font-size: 11px;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+
+/* WARNING */
+
+.warning-panel {
+    border: 1px dashed #444;
+
+    padding: 25px 30px;
+
+    margin: 40px 0 70px;
+
+    max-width: 700px;
+}
+
+.warning-title {
+    color: #ff3b3b !important;
+    font-weight: bold;
+    letter-spacing: 2px;
+    margin-bottom: 10px;
+}
+
+.warning-panel p {
+    color: #777;
+    line-height: 1.6;
+}
+
+
+/* START */
+
+.start-section {
+    text-align: center;
+
+    border-top: 1px solid #252525;
+
+    padding-top: 60px;
+}
+
+.start-section > p {
+    color: #555;
+    font-size: 11px;
+    letter-spacing: 3px;
+    margin-bottom: 25px;
+}
+
+
+/* FOOTER */
+
+footer {
+    margin-top: 100px;
+
+    border-top: 1px solid #202020;
+
+    padding-top: 20px;
+
+    text-align: center;
+}
+
+footer p {
+    color: #333;
+    font-size: 9px;
+    letter-spacing: 2px;
+}
+
+
+/* MOBILE */
+
+@media (max-width: 650px) {
+
+    .briefing-page {
+        padding: 30px 22px 60px;
+    }
+
+    .page-header {
+        margin-bottom: 60px;
+    }
+
+    .file-number {
+        display: none;
+    }
+
+    .briefing-title {
+        margin-bottom: 70px;
+    }
+
+    .briefing-title h1 {
+        letter-spacing: -2px;
+    }
+
+    .briefing-section {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+
+    .parameter {
+        grid-template-columns: 1fr;
+        gap: 8px;
+    }
+
+    .warning-panel {
+        padding: 20px;
+    }
+}
