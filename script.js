@@ -15,6 +15,7 @@ const clues = [
         ]
     },
 
+
     {
         title: "A TRAINER NEEDS THEIR BRAIN",
 
@@ -28,6 +29,7 @@ const clues = [
             "bag"
         ]
     },
+
 
     {
         title: "THE LEGENDARY BEAST",
@@ -45,6 +47,7 @@ const clues = [
         ]
     },
 
+
     {
         title: "YUMMY SECRETS",
 
@@ -60,6 +63,7 @@ const clues = [
         ]
     },
 
+
     {
         title: "THE SECRET VOID",
 
@@ -74,6 +78,7 @@ const clues = [
             "drawer"
         ]
     },
+
 
     {
         title: "A THOUSAND STORIES",
@@ -91,6 +96,7 @@ const clues = [
         ]
     },
 
+
     {
         title: "STAY COOL",
 
@@ -105,6 +111,7 @@ const clues = [
             "cooler"
         ]
     },
+
 
     {
         title: "BATTLE OUTFITS",
@@ -121,6 +128,7 @@ const clues = [
         ]
     },
 
+
     {
         title: "HOT AND BRIGHT",
 
@@ -133,6 +141,73 @@ const clues = [
             "air fryer",
             "airfryer",
             "fryer"
+        ]
+    },
+
+
+    {
+        title: "THE COOLEST ONE",
+
+        text: `
+            The coolest one of them all,<br><br>
+            Where else would it be?<br><br>
+            Check where things stay cool. ❄️
+        `,
+
+        answers: [
+            "fridge",
+            "refrigerator"
+        ]
+    },
+
+
+    {
+        title: "NO WI-FI, NO GAME",
+
+        text: `
+            No Wi-Fi, no game.<br>
+            No game, no adventure.<br><br>
+            Look beneath your connection to the world. 📶
+        `,
+
+        answers: [
+            "under the wifi",
+            "under wifi",
+            "wifi",
+            "wi fi",
+            "under the wi fi"
+        ]
+    },
+
+
+    {
+        title: "THE CAT'S NEW HOME",
+
+        text: `
+            She keeps getting kicked out… 🐾<br><br>
+            So maybe this time,<br>
+            she needs somewhere to stay. 🐾
+        `,
+
+        answers: [
+            "cat cage",
+            "cage"
+        ]
+    },
+
+
+    {
+        title: "BUILD THAT BODY",
+
+        text: `
+            You like the character.<br>
+            You like the body even more. 👀<br><br>
+            Check where you go to build one. 🏋️
+        `,
+
+        answers: [
+            "gym bag",
+            "gymbag"
         ]
     }
 
@@ -180,6 +255,7 @@ function loadClue() {
     document.getElementById("success-box").classList.remove("show");
 
     document.getElementById("answer").focus();
+
 }
 
 
@@ -295,7 +371,7 @@ function completeMission() {
 
                 <p>
                     <span>CLUES SOLVED</span>
-                    09 / 09
+                    13 / 13
                 </p>
 
                 <p>
