@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Witness Testimonies | Operation Birthday</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+
+        /* =========================================
+           WITNESS TESTIMONIES
+           ========================================= */
+
+        .testimonies-page {
+            width: 100%;
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 60px 40px 90px;
+        }
+
+        .testimonies-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            padding-bottom: 45px;
+            margin-bottom: 70px;
+            border-bottom: 1px solid #292929;
+        }
+
+        .testimonies-header h1 {
+            margin: 0;
+            font-size: clamp(55px, 9vw, 105px);
+            line-height: 0.82;
+            letter-spacing: -5px;
+            font-weight: 900;
+        }
+
+        .testimonies-meta {
+            text-align: right;
+            font-family: monospace;
+            font-size: 9px;
+            line-height: 2.1;
+            letter-spacing: 2px;
+            color: #666;
+        }
+
+        .testimonies-intro {
+            max-width: 680px;
+            margin-bottom: 70px;
+        }
+
+        .testimonies-intro h2 {
+            margin: 12px 0 20px;
+            font-size: clamp(40px, 6vw, 70px);
+            line-height: 0.9;
+            letter-spacing: -3px;
+        }
+
+        .testimonies-intro p:last-child {
+            max-width: 600px;
+            color: #888;
+            font-size: 15px;
+            line-height: 1.8;
+        }
+
+        .witness-grid {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 18px;
+        }
+
+        .witness-card {
+            position: relative;
+            padding: 25px;
+            background: #101010;
+            border: 1px solid #292929;
+            transition: transform 0.25s ease, border-color 0.25s ease;
+        }
+
+        .witness-card:hover {
+            transform: translateY(-3px);
+            border-color: #555;
+        }
+
+        .witness-card:last-child {
+            grid-column: 1 / -1;
+            max-width: calc(50% - 9px);
+        }
+
+        .witness-number {
+            margin: 0 0 20px;
+            color: #ff3b3b;
+            font-family: monospace;
+            font-size: 9px;
+            font-weight: bold;
+            letter-spacing: 2px;
+        }
+
+        .witness-label {
+            margin: 0 0 15px;
+            color: #555;
+            font-family: monospace;
+            font-size: 8px;
+            letter-spacing: 2px;
+        }
+
+        .witness-card video {
+            display: block;
+            width: 100%;
+            max-height: 650px;
+            object-fit: contain;
+            background: #050505;
+            border: 1px solid #202020;
+        }
+
+        .witness-status {
+            display: flex;
+            justify-content: space-between;
+            gap: 15px;
+            margin-top: 15px;
+            padding-top: 14px;
+            border-top: 1px solid #202020;
+            color: #555;
+            font-family: monospace;
+            font-size: 8px;
+            letter-spacing: 1.5px;
+        }
+
+        .witness-status span:last-child {
+            color: #ff3b3b;
+        }
+
+        .testimonies-footer {
+            margin-top: 90px;
+            padding-top: 25px;
+            border-top: 1px solid #252525;
+            text-align: center;
+        }
+
+        .testimonies-footer p {
+            margin: 8px;
+            color: #333;
+            font-family: monospace;
+            font-size: 8px;
+            letter-spacing: 2px;
+        }
+
+        .testimonies-footer a {
+            display: inline-block;
+            margin-top: 25px;
+            color: #777;
+            text-decoration: none;
+            font-family: monospace;
+            font-size: 9px;
+            letter-spacing: 2px;
+        }
+
+        .testimonies-footer a:hover {
+            color: #ff3b3b;
+        }
+
+        @media (max-width: 700px) {
+
+            .testimonies-page {
+                padding: 35px 20px 60px;
+            }
+
+            .testimonies-header {
+                flex-direction: column;
+                gap: 30px;
+            }
+
+            .testimonies-header h1 {
+                font-size: 60px;
+            }
+
+            .testimonies-meta {
+                text-align: left;
+            }
+
+            .witness-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .witness-card:last-child {
+                grid-column: auto;
+                max-width: none;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+<main class="testimonies-page">
+
+
+    <!-- HEADER -->
+
+    <header class="testimonies-header">
+
+        <div>
+
+            <p class="classified">
+                // CLASSIFIED ARCHIVE //
+            </p>
+
+            <p class="archive-code">
+                ARCHIVE FILE 004
+            </p>
+
+            <h1>
+                THE PEOPLE<br>
+                SPEAK.
+            </h1>
+
+        </div>
+
+        <div class="testimonies-meta">
+
+            <p>SUBJECT: MALHAR</p>
+            <p>FILE STATUS: VERIFIED</p>
+            <p>WITNESSES: 05</p>
+
+        </div>
+
+    </header>
+
+
+    <!-- INTRO -->
+
+    <section class="testimonies-intro">
+
+        <p class="classified">
+            // WITNESS TESTIMONIES //
+        </p>
+
+        <h2>
+            FIVE PEOPLE.<br>
+            FIVE STATEMENTS.
+        </h2>
+
+        <p>
+            Five individuals were contacted during the investigation.
+            All agreed to go on record. Their statements have been
+            preserved below for archival purposes.
+        </p>
+
+    </section>
+
+
+    <!-- VIDEOS -->
+
+    <section class="witness-grid">
+
+
+        <!-- WITNESS 001 -->
+
+        <article class="witness-card">
+
+            <p class="witness-number">
+                WITNESS 001
+            </p>
+
+            <p class="witness-label">
+                RECORDED STATEMENT // EVIDENCE 001
+            </p>
+
+            <video controls playsinline preload="metadata">
+                <source src="assets/videos/witness_001.mp4" type="video/mp4">
+                Your browser does not support video playback.
+            </video>
+
+            <div class="witness-status">
+                <span>STATUS: RECOVERED</span>
+                <span>VERIFIED</span>
+            </div>
+
+        </article>
+
+
+        <!-- WITNESS 002 -->
+
+        <article class="witness-card">
+
+            <p class="witness-number">
+                WITNESS 002
+            </p>
+
+            <p class="witness-label">
+                RECORDED STATEMENT // EVIDENCE 002
+            </p>
+
+            <video controls playsinline preload="metadata">
+                <source src="assets/videos/witness_002.mp4" type="video/mp4">
+                Your browser does not support video playback.
+            </video>
+
+            <div class="witness-status">
+                <span>STATUS: RECOVERED</span>
+                <span>VERIFIED</span>
+            </div>
+
+        </article>
+
+
+        <!-- WITNESS 003 -->
+
+        <article class="witness-card">
+
+            <p class="witness-number">
+                WITNESS 003
+            </p>
+
+            <p class="witness-label">
+                RECORDED STATEMENT // EVIDENCE 003
+            </p>
+
+            <video controls playsinline preload="metadata">
+                <source src="assets/videos/witness_003.mp4" type="video/mp4">
+                Your browser does not support video playback.
+            </video>
+
+            <div class="witness-status">
+                <span>STATUS: RECOVERED</span>
+                <span>VERIFIED</span>
+            </div>
+
+        </article>
+
+
+        <!-- WITNESS 004 -->
+
+        <article class="witness-card">
+
+            <p class="witness-number">
+                WITNESS 004
+            </p>
+
+            <p class="witness-label">
+                RECORDED STATEMENT // EVIDENCE 004
+            </p>
+
+            <video controls playsinline preload="metadata">
+                <source src="assets/videos/witness_004.mp4" type="video/mp4">
+                Your browser does not support video playback.
+            </video>
+
+            <div class="witness-status">
+                <span>STATUS: RECOVERED</span>
+                <span>VERIFIED</span>
+            </div>
+
+        </article>
+
+
+        <!-- WITNESS 005 -->
+
+        <article class="witness-card">
+
+            <p class="witness-number">
+                WITNESS 005
+            </p>
+
+            <p class="witness-label">
+                RECORDED STATEMENT // EVIDENCE 005
+            </p>
+
+            <video controls playsinline preload="metadata">
+                <source src="assets/videos/witness_005.mp4" type="video/mp4">
+                Your browser does not support video playback.
+            </video>
+
+            <div class="witness-status">
+                <span>STATUS: RECOVERED</span>
+                <span>VERIFIED</span>
+            </div>
+
+        </article>
+
+
+    </section>
+
+
+    <!-- FOOTER -->
+
+    <footer class="testimonies-footer">
+
+        <p>
+            // WITNESS TESTIMONY ARCHIVE //
+        </p>
+
+        <p>
+            ALL STATEMENTS HAVE BEEN PRESERVED WITHOUT ALTERATION.
+        </p>
+
+        <a href="archives.html">
+            ← RETURN TO ARCHIVES
+        </a>
+
+    </footer>
+
+
+</main>
+
+</body>
+
+</html>
