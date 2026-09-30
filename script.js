@@ -15,7 +15,6 @@ const clues = [
         ]
     },
 
-
     {
         title: "A TRAINER NEEDS THEIR BRAIN",
 
@@ -29,7 +28,6 @@ const clues = [
             "bag"
         ]
     },
-
 
     {
         title: "THE LEGENDARY BEAST",
@@ -47,7 +45,6 @@ const clues = [
         ]
     },
 
-
     {
         title: "KITCHEN SECRETS",
 
@@ -63,7 +60,6 @@ const clues = [
         ]
     },
 
-
     {
         title: "THE SECRET DRAWER",
 
@@ -78,7 +74,6 @@ const clues = [
             "drawer"
         ]
     },
-
 
     {
         title: "A THOUSAND STORIES",
@@ -96,7 +91,6 @@ const clues = [
         ]
     },
 
-
     {
         title: "STAY COOL",
 
@@ -112,7 +106,6 @@ const clues = [
         ]
     },
 
-
     {
         title: "BATTLE OUTFITS",
 
@@ -127,7 +120,6 @@ const clues = [
             "clothes"
         ]
     },
-
 
     {
         title: "HOT AND BRIGHT",
@@ -174,7 +166,7 @@ function loadClue() {
         `MISSION PROGRESS: ${currentClue + 1} / ${clues.length}`;
 
     const progress =
-        ((currentClue) / clues.length) * 100;
+        (currentClue / clues.length) * 100;
 
     document.getElementById("progress-fill").style.width =
         `${progress}%`;
@@ -188,7 +180,6 @@ function loadClue() {
     document.getElementById("success-box").classList.remove("show");
 
     document.getElementById("answer").focus();
-
 }
 
 
@@ -213,15 +204,28 @@ function normaliseAnswer(answer) {
 
 function checkAnswer() {
 
-    const input =
-        normaliseAnswer(
-            document.getElementById("answer").value
-        );
+    const input = normaliseAnswer(
+        document.getElementById("answer").value
+    );
 
-    const acceptedAnswers =
-        clues[currentClue].answers.map(
-            normaliseAnswer
-        );
+    const acceptedAnswers = clues[currentClue].answers.map(
+        normaliseAnswer
+    );
+
+
+    /*
+       TEMPORARY DIAGNOSTIC
+
+       This popup lets us confirm that the website
+       is actually using this version of script.js.
+    */
+
+    alert(
+        "You entered: [" + input + "]\n\n" +
+        "Accepted answers:\n" +
+        acceptedAnswers.join("\n")
+    );
+
 
     const feedback =
         document.getElementById("feedback");
@@ -230,6 +234,8 @@ function checkAnswer() {
     if (acceptedAnswers.includes(input)) {
 
         feedback.textContent = "";
+
+        feedback.className = "";
 
         document.getElementById("success-message").innerHTML =
             `
