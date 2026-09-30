@@ -212,21 +212,6 @@ function checkAnswer() {
         normaliseAnswer
     );
 
-
-    /*
-       TEMPORARY DIAGNOSTIC
-
-       This popup lets us confirm that the website
-       is actually using this version of script.js.
-    */
-
-    alert(
-        "You entered: [" + input + "]\n\n" +
-        "Accepted answers:\n" +
-        acceptedAnswers.join("\n")
-    );
-
-
     const feedback =
         document.getElementById("feedback");
 
@@ -234,7 +219,6 @@ function checkAnswer() {
     if (acceptedAnswers.includes(input)) {
 
         feedback.textContent = "";
-
         feedback.className = "";
 
         document.getElementById("success-message").innerHTML =
