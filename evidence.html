@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Photographic Evidence | Malhar Archives</title>
+
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+
+<body>
+
+    <main class="evidence-page">
+
+
+        <!-- HEADER -->
+
+        <header class="evidence-header">
+
+            <div>
+
+                <p class="classified">
+                    // ARCHIVE FILE 002-A //
+                </p>
+
+                <p class="evidence-title">
+                    PHOTOGRAPHIC EVIDENCE
+                </p>
+
+            </div>
+
+            <a href="archives.html" class="back-link">
+                ← ARCHIVES
+            </a>
+
+        </header>
+
+
+        <!-- INTRO -->
+
+        <section class="evidence-intro">
+
+            <p class="section-label">
+                EXHIBIT DATABASE
+            </p>
+
+            <h1>
+                THE EVIDENCE
+                <br>
+                WALL.
+            </h1>
+
+            <p>
+                73 photographs recovered from various sources.
+                The authenticity of several exhibits has been
+                questioned.
+            </p>
+
+        </section>
+
+
+        <!-- FILTER -->
+
+        <section class="evidence-controls">
+
+            <span>
+                EXHIBITS: <strong>73</strong>
+            </span>
+
+            <span>
+                STATUS: <strong>UNREDACTED</strong>
+            </span>
+
+        </section>
+
+
+        <!-- GALLERY -->
+
+        <section
+            class="evidence-grid"
+            id="evidence-grid"
+        >
+        </section>
+
+
+        <!-- FOOTER -->
+
+        <footer class="evidence-footer">
+
+            <p>
+                END OF AVAILABLE EVIDENCE
+            </p>
+
+            <a href="archives.html">
+                ← RETURN TO ARCHIVES
+            </a>
+
+        </footer>
+
+
+    </main>
+
+
+    <script>
+
+        const gallery = document.getElementById("evidence-grid");
+
+        const totalPhotos = 73;
+
+        for (let i = 1; i <= totalPhotos; i++) {
+
+            const number = String(i).padStart(3, "0");
+
+            const card = document.createElement("div");
+
+            card.className = "evidence-item";
+
+            card.innerHTML = `
+
+                <div class="evidence-image-wrapper">
+
+                    <img
+                        src="assets/photos/photo_${number}.jpg"
+                        alt="Exhibit ${number}"
+                        loading="lazy"
+                        onerror="this.parentElement.parentElement.style.display='none';"
+                    >
+
+                    <span class="exhibit-number">
+                        EXHIBIT ${number}
+                    </span>
+
+                </div>
+
+                <div class="evidence-caption">
+
+                    <span>
+                        EXHIBIT ${number}
+                    </span>
+
+                    <span>
+                        STATUS: QUESTIONABLE
+                    </span>
+
+                </div>
+
+            `;
+
+            gallery.appendChild(card);
+
+        }
+
+    </script>
+
+</body>
+
+</html>
