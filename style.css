@@ -1828,108 +1828,162 @@ body.modal-open {
     }
 
 }
+/* =========================================================
+   ARCHIVES — FILE 002 ALIGNMENT
+   ========================================================= */
+
+.archive-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.archive-card-content {
+    margin-top: auto;
+    margin-bottom: auto;
+}
+
+.archive-card-description {
+    max-width: 500px;
+}
+
+.archive-card-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 20px;
+    border-top: 1px solid #242424;
+    color: #555;
+    font-size: 9px;
+    letter-spacing: 2px;
+}
+
+.archive-card-footer .archive-card-arrow {
+    color: #ff3b3b;
+    font-size: 20px;
+}
+
 
 /* =========================================================
-   CUSTOMER REVIEWS
+   CUSTOMER REVIEWS — FILE 002
    ========================================================= */
 
 .reviews-page {
     width: 100%;
     max-width: 1100px;
     margin: 0 auto;
-    padding: 60px 40px 80px;
+    padding: 60px 40px 90px;
 }
-
-
-/* =========================================
-   HEADER
-   ========================================= */
 
 .reviews-header {
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
-    border-bottom: 1px solid #242424;
-    padding-bottom: 50px;
-    margin-bottom: 50px;
+    padding-bottom: 45px;
+    margin-bottom: 55px;
+    border-bottom: 1px solid #292929;
 }
 
-.archive-code {
+.reviews-header .archive-code {
+    margin: 8px 0 20px;
     font-family: monospace;
-    font-size: 11px;
+    font-size: 10px;
     letter-spacing: 3px;
     color: #666;
-    margin: 8px 0 20px;
 }
 
 .reviews-header h1 {
-    font-size: clamp(55px, 9vw, 110px);
+    margin: 0;
+    font-size: clamp(60px, 9vw, 105px);
     line-height: 0.82;
     letter-spacing: -5px;
-    margin: 0;
     font-weight: 900;
 }
 
 .reviews-header-meta {
     text-align: right;
     font-family: monospace;
-    font-size: 10px;
+    font-size: 9px;
+    line-height: 2.1;
     letter-spacing: 2px;
     color: #666;
-    line-height: 2;
 }
 
 
-/* =========================================
-   PRODUCT SUMMARY
-   ========================================= */
+/* PRODUCT SUMMARY */
 
 .product-summary {
+    position: relative;
     display: grid;
-    grid-template-columns: 1.4fr 1fr;
+    grid-template-columns: 1.35fr 1fr;
     gap: 60px;
-    padding: 35px;
+    padding: 40px;
     background: #111;
     border: 1px solid #292929;
     margin-bottom: 100px;
 }
 
+.product-summary::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 4px;
+    height: 100%;
+    background: #d62828;
+}
+
 .product-label {
+    margin-bottom: 15px;
     font-family: monospace;
-    font-size: 10px;
+    font-size: 9px;
     letter-spacing: 3px;
     color: #777;
-    margin-bottom: 15px;
 }
 
 .product-info h2 {
-    font-size: 60px;
     margin: 0 0 15px;
+    font-size: 65px;
+    line-height: 0.9;
     letter-spacing: -3px;
 }
 
 .product-description {
-    max-width: 500px;
+    max-width: 520px;
     color: #aaa;
-    font-size: 16px;
+    font-size: 15px;
     line-height: 1.7;
+}
+
+.product-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 25px;
+}
+
+.product-tags span {
+    padding: 6px 9px;
+    border: 1px solid #383838;
+    font-family: monospace;
+    font-size: 8px;
+    letter-spacing: 1.5px;
+    color: #777;
 }
 
 .verified-product {
     display: inline-block;
     margin-top: 25px;
     padding: 7px 12px;
-    border: 1px solid #555;
-    color: #aaa;
+    border: 1px solid #3b5945;
+    color: #78a987;
     font-family: monospace;
-    font-size: 9px;
+    font-size: 8px;
     letter-spacing: 2px;
 }
 
 
-/* =========================================
-   RATING SUMMARY
-   ========================================= */
+/* RATING SUMMARY */
 
 .rating-summary {
     border-left: 1px solid #292929;
@@ -1939,26 +1993,26 @@ body.modal-open {
 .overall-rating {
     display: flex;
     align-items: center;
-    gap: 15px;
-    margin-bottom: 5px;
+    gap: 18px;
 }
 
 .rating-number {
-    font-size: 55px;
+    font-size: 58px;
     font-weight: 700;
 }
 
 .rating-stars {
+    color: #f4b942;
     font-size: 24px;
     letter-spacing: 2px;
 }
 
 .rating-caption {
+    margin: 3px 0 30px;
     font-family: monospace;
-    font-size: 9px;
-    color: #666;
+    font-size: 8px;
     letter-spacing: 2px;
-    margin-bottom: 30px;
+    color: #666;
 }
 
 .rating-bars {
@@ -1973,44 +2027,28 @@ body.modal-open {
     align-items: center;
     gap: 10px;
     font-family: monospace;
-    font-size: 10px;
+    font-size: 9px;
     color: #777;
 }
 
 .rating-bar {
     height: 7px;
-    background: #292929;
+    background: #282828;
 }
 
 .rating-fill {
     height: 100%;
-    background: #888;
+    background: #f4b942;
 }
 
-.rating-5 {
-    width: 62%;
-}
-
-.rating-4 {
-    width: 82%;
-}
-
-.rating-3 {
-    width: 48%;
-}
-
-.rating-2 {
-    width: 20%;
-}
-
-.rating-1 {
-    width: 8%;
-}
+.rating-5 { width: 0%; }
+.rating-4 { width: 80%; }
+.rating-3 { width: 40%; }
+.rating-2 { width: 0%; }
+.rating-1 { width: 0%; }
 
 
-/* =========================================
-   SECTION HEADINGS
-   ========================================= */
+/* SECTION HEADINGS */
 
 .section-heading {
     margin-bottom: 45px;
@@ -2018,16 +2056,14 @@ body.modal-open {
 
 .section-heading h2,
 .reviews-title-row h2 {
+    margin: 10px 0 0;
     font-size: clamp(45px, 7vw, 75px);
     line-height: 0.85;
     letter-spacing: -3px;
-    margin: 10px 0 0;
 }
 
 
-/* =========================================
-   AWARDS
-   ========================================= */
+/* AWARD NOMINATIONS */
 
 .award-section {
     margin-bottom: 110px;
@@ -2040,58 +2076,80 @@ body.modal-open {
 }
 
 .award-card {
-    padding: 30px;
-    border: 1px solid #292929;
-    background: #0e0e0e;
     position: relative;
+    padding: 30px;
+    background: #101010;
+    border: 1px solid #292929;
+    transition: transform 0.2s ease, border-color 0.2s ease;
+}
+
+.award-card::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 3px;
+    height: 100%;
+    background: #d62828;
 }
 
 .award-card:hover {
+    transform: translateY(-3px);
     border-color: #555;
 }
 
+.award-card-featured {
+    border-color: #4d4230;
+}
+
+.award-card-featured::before {
+    background: #f4b942;
+}
+
 .award-number {
+    margin: 0 0 25px;
+    font-family: monospace;
+    font-size: 8px;
+    letter-spacing: 2px;
+    color: #555;
+}
+
+.award-category {
+    margin: 0 0 6px;
     font-family: monospace;
     font-size: 9px;
     letter-spacing: 2px;
-    color: #555;
-    margin-bottom: 30px;
+    color: #d62828;
+}
+
+.award-card-featured .award-category {
+    color: #f4b942;
 }
 
 .award-card h3 {
-    font-size: 27px;
-    letter-spacing: -1px;
     margin: 0;
-}
-
-.award-subtitle {
-    font-family: monospace;
-    font-size: 10px;
-    letter-spacing: 2px;
-    color: #777;
-    text-transform: uppercase;
-    margin-top: 5px;
+    font-size: 27px;
+    line-height: 1;
+    letter-spacing: -1px;
 }
 
 .award-description {
+    margin-top: 22px;
     color: #aaa;
     font-size: 14px;
     line-height: 1.7;
-    margin-top: 25px;
 }
 
 .award-nominator {
+    margin-top: 28px;
     font-family: monospace;
-    font-size: 9px;
+    font-size: 8px;
     letter-spacing: 2px;
     color: #555;
-    margin-top: 30px;
 }
 
 
-/* =========================================
-   REVIEWS SECTION
-   ========================================= */
+/* CUSTOMER REVIEWS */
 
 .customer-reviews {
     margin-bottom: 100px;
@@ -2101,33 +2159,47 @@ body.modal-open {
     display: flex;
     justify-content: space-between;
     align-items: flex-end;
-    margin-bottom: 50px;
+    margin-bottom: 45px;
 }
 
 .review-count {
     text-align: right;
     font-family: monospace;
-    font-size: 9px;
+    font-size: 8px;
     line-height: 1.8;
     letter-spacing: 2px;
     color: #555;
 }
 
-
-/* =========================================
-   REVIEW CARD
-   ========================================= */
-
 .review-card {
-    border-top: 1px solid #292929;
+    position: relative;
     padding: 40px 0;
+    border-top: 1px solid #292929;
+}
+
+.review-card::before {
+    content: "";
+    position: absolute;
+    top: -1px;
+    left: 0;
+    width: 45px;
+    height: 2px;
+    background: #333;
 }
 
 .featured-review {
-    background: #111;
-    border: 1px solid #333;
     padding: 40px;
     margin-bottom: 20px;
+    background: #111;
+    border: 1px solid #333;
+}
+
+.featured-review::before {
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background: #f4b942;
 }
 
 .review-top {
@@ -2144,36 +2216,38 @@ body.modal-open {
 }
 
 .reviewer-avatar {
-    width: 38px;
-    height: 38px;
-    border: 1px solid #555;
+    width: 40px;
+    height: 40px;
     display: flex;
     justify-content: center;
     align-items: center;
+    border: 1px solid #555;
     font-family: monospace;
     font-size: 13px;
+    color: #f4b942;
 }
 
 .reviewer-name {
-    font-family: monospace;
-    font-size: 11px;
-    letter-spacing: 2px;
     margin: 0 0 4px;
+    font-family: monospace;
+    font-size: 10px;
+    letter-spacing: 2px;
 }
 
 .reviewer-status {
+    margin: 0;
     font-family: monospace;
     font-size: 8px;
-    color: #777;
     letter-spacing: 1px;
-    margin: 0;
+    color: #78a987;
 }
 
 .review-date {
+    margin: 0;
     font-family: monospace;
     font-size: 8px;
-    color: #555;
     letter-spacing: 2px;
+    color: #555;
 }
 
 .review-rating {
@@ -2184,8 +2258,10 @@ body.modal-open {
 }
 
 .stars {
-    font-size: 18px;
+    color: #f4b942;
+    font-size: 19px;
     letter-spacing: 2px;
+    white-space: nowrap;
 }
 
 .review-title {
@@ -2195,10 +2271,10 @@ body.modal-open {
 
 .review-body {
     max-width: 760px;
+    margin: 0 0 14px;
     color: #aaa;
     font-size: 15px;
     line-height: 1.75;
-    margin: 0 0 14px;
 }
 
 .review-footer {
@@ -2211,8 +2287,9 @@ body.modal-open {
 }
 
 .review-footer p {
+    margin: 0;
     font-family: monospace;
-    font-size: 9px;
+    font-size: 8px;
     letter-spacing: 1px;
     color: #555;
 }
@@ -2223,10 +2300,10 @@ body.modal-open {
 }
 
 .helpful-buttons button {
+    padding: 7px 12px;
     background: transparent;
     border: 1px solid #333;
     color: #777;
-    padding: 7px 12px;
     font-family: monospace;
     font-size: 8px;
     letter-spacing: 1px;
@@ -2235,26 +2312,23 @@ body.modal-open {
 
 .helpful-buttons button:hover {
     border-color: #777;
-    color: #aaa;
+    color: white;
+    background: transparent;
+    transform: none;
 }
 
-
-/* =========================================
-   FOOTER
-   ========================================= */
-
 .reviews-footer {
-    border-top: 1px solid #242424;
     padding-top: 30px;
+    border-top: 1px solid #242424;
     text-align: center;
 }
 
 .reviews-footer p {
+    margin: 8px;
     font-family: monospace;
     font-size: 8px;
     letter-spacing: 2px;
     color: #444;
-    margin: 8px;
 }
 
 .reviews-footer a {
@@ -2272,9 +2346,9 @@ body.modal-open {
 }
 
 
-/* =========================================
-   MOBILE
-   ========================================= */
+/* =========================================================
+   CUSTOMER REVIEWS — MOBILE
+   ========================================================= */
 
 @media (max-width: 700px) {
 
@@ -2298,7 +2372,7 @@ body.modal-open {
     .product-summary {
         grid-template-columns: 1fr;
         gap: 40px;
-        padding: 25px;
+        padding: 28px;
     }
 
     .rating-summary {
@@ -2313,8 +2387,8 @@ body.modal-open {
     }
 
     .reviews-title-row {
-        align-items: flex-start;
         flex-direction: column;
+        align-items: flex-start;
         gap: 20px;
     }
 
@@ -2328,19 +2402,18 @@ body.modal-open {
     }
 
     .review-rating {
-        align-items: flex-start;
         flex-direction: column;
+        align-items: flex-start;
         gap: 8px;
     }
 
     .featured-review {
-        padding: 25px;
+        padding: 28px;
     }
 
     .review-footer {
-        align-items: flex-start;
         flex-direction: column;
+        align-items: flex-start;
         gap: 10px;
     }
-
 }
