@@ -845,41 +845,28 @@ footer p {
 .archives-page {
     width: 100%;
     max-width: 1100px;
-
     margin: 0 auto;
-
     padding: 40px 35px 80px;
 }
 
-
-/* HEADER */
-
 .archives-header {
     display: flex;
-
     justify-content: space-between;
     align-items: center;
-
     padding-bottom: 20px;
-
     border-bottom: 1px solid #252525;
 }
 
 .archive-code {
     margin-top: 8px;
-
     color: #555;
-
     font-size: 10px;
-
     letter-spacing: 2px;
 }
 
 .archive-status {
     color: #555;
-
     font-size: 10px;
-
     letter-spacing: 2px;
 }
 
@@ -887,69 +874,42 @@ footer p {
     color: #ff3b3b;
 }
 
-
-/* INTRO */
-
 .archives-intro {
     padding: 100px 0 90px;
 }
 
 .archives-intro h1 {
     margin: 25px 0 35px;
-
     color: #f2f2f2;
-
     font-size: clamp(55px, 9vw, 105px);
-
     line-height: 0.88;
-
     letter-spacing: -4px;
 }
 
 .archives-description {
     max-width: 650px;
-
     color: #888;
-
     font-size: 18px;
-
     line-height: 1.7;
 }
 
-
-/* FILES */
-
 .archive-files {
     display: grid;
-
-    grid-template-columns: repeat(2, 1fr);
-
+    grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 15px;
 }
 
-
-/* CARD */
-
 .archive-card {
     position: relative;
-
     min-height: 380px;
-
     padding: 25px 30px;
-
     border: 1px solid #292929;
-
     background: #101010;
-
     color: white;
-
     text-decoration: none;
 
     display: flex;
-
     flex-direction: column;
-
-    justify-content: space-between;
 
     transition:
         transform 0.25s ease,
@@ -963,136 +923,127 @@ footer p {
 
 .archive-active:hover {
     transform: translateY(-5px);
-
     border-color: #ff3b3b;
-
     background: #141414;
 }
 
-
-/* CARD TOP */
-
 .archive-card-top {
     display: flex;
-
     justify-content: space-between;
-
     align-items: center;
+    flex-shrink: 0;
 }
 
 .archive-number {
     color: #ff3b3b;
-
     font-size: 13px;
-
     font-weight: bold;
-
     letter-spacing: 2px;
 }
 
 .archive-type {
     color: #555;
-
     font-size: 9px;
-
     letter-spacing: 2px;
 }
 
+/* File 01 and File 02 share this exact same content structure. */
 
-/* CARD MAIN */
+.archive-card-content,
+.archive-card-main {
+    flex: 1;
+    min-height: 0;
 
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.archive-card-label,
+.archive-type {
+    margin: 0 0 8px;
+    color: #777;
+    font-size: 9px;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+.archive-card-content h2,
 .archive-card-main h2 {
-    margin-bottom: 20px;
-
+    margin: 0 0 18px;
+    color: #f2f2f2;
     font-size: clamp(35px, 4vw, 55px);
-
     line-height: 0.9;
-
     letter-spacing: -2px;
 }
 
+.archive-card-description,
 .archive-card-main p {
     max-width: 400px;
-
+    margin: 0;
     color: #777;
-
     font-size: 14px;
-
     line-height: 1.6;
 }
 
-
-/* CARD BOTTOM */
-
-.archive-card-bottom {
+.archive-card-bottom,
+.archive-card-footer {
     display: flex;
-
     justify-content: space-between;
-
     align-items: center;
+    flex-shrink: 0;
 
     padding-top: 20px;
-
     border-top: 1px solid #242424;
 
     color: #555;
-
     font-size: 9px;
-
     letter-spacing: 2px;
 }
 
-.archive-arrow {
+.archive-arrow,
+.archive-card-arrow {
     color: #ff3b3b;
-
     font-size: 20px;
 }
 
-
-/* LOCKED */
-
 .archive-locked {
     opacity: 0.45;
-
     cursor: not-allowed;
 }
 
 .archive-locked:hover {
+    transform: none;
     border-color: #292929;
+    background: #101010;
 }
 
-
-/* FINAL FILE */
+.archive-locked .archive-number {
+    color: #555;
+}
 
 .final-archive {
     grid-column: span 2;
-
     min-height: 300px;
 }
 
-
-/* FOOTER */
-
 .archives-footer {
     margin-top: 100px;
-
     padding-top: 20px;
-
     border-top: 1px solid #202020;
-
     text-align: center;
 }
 
 .archives-footer p {
     color: #333;
-
     font-size: 9px;
-
     letter-spacing: 2px;
 }
 
 
 /* =========================================
+   EVIDENCE PAGE
+   ========================================= */
    EVIDENCE PAGE
    ========================================= */
 
@@ -1829,42 +1780,6 @@ body.modal-open {
 
 }
 /* =========================================================
-   ARCHIVES — FILE 002 ALIGNMENT
-   ========================================================= */
-
-.archive-card {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-}
-
-.archive-card-content {
-    margin-top: auto;
-    margin-bottom: auto;
-}
-
-.archive-card-description {
-    max-width: 500px;
-}
-
-.archive-card-footer {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding-top: 20px;
-    border-top: 1px solid #242424;
-    color: #555;
-    font-size: 9px;
-    letter-spacing: 2px;
-}
-
-.archive-card-footer .archive-card-arrow {
-    color: #ff3b3b;
-    font-size: 20px;
-}
-
-
-/* =========================================================
    CUSTOMER REVIEWS — FILE 002
    ========================================================= */
 
@@ -2099,11 +2014,11 @@ body.modal-open {
 }
 
 .award-card-featured {
-    border-color: #4d4230;
+    border-color: #292929;
 }
 
 .award-card-featured::before {
-    background: #f4b942;
+    background: #d62828;
 }
 
 .award-number {
@@ -2123,7 +2038,7 @@ body.modal-open {
 }
 
 .award-card-featured .award-category {
-    color: #f4b942;
+    color: #d62828;
 }
 
 .award-card h3 {
@@ -2419,70 +2334,27 @@ body.modal-open {
 }
 
 /* =========================================================
-   FINAL AWARD COLOUR FIX
-   ========================================================= */
 
-.award-card,
-.award-card-featured {
-    border-color: #292929;
-}
+/* =========================================
+   FINAL RESPONSIVE CLEANUP
+   ========================================= */
 
-.award-card::before,
-.award-card-featured::before {
-    background: #ff3b3b;
-}
+@media (max-width: 700px) {
 
-.award-card-featured {
-    border-color: #292929;
-}
+    .archive-files {
+        grid-template-columns: 1fr;
+    }
 
-.award-card-featured .award-category {
-    color: #ff3b3b;
-}
+    .final-archive {
+        grid-column: span 1;
+    }
 
-.award-card-featured .award-number {
-    color: #555;
-}
+    .archive-card {
+        min-height: 330px;
+    }
 
-/* =========================================================
-   ARCHIVE CARD ALIGNMENT FIX
-   ========================================================= */
-
-/* Make every archive card use the same internal structure */
-.archive-card {
-    display: flex;
-    flex-direction: column;
-    min-height: 380px;
-}
-
-/* Old markup */
-.archive-card-main {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-}
-
-/* New markup */
-.archive-card-content {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-}
-
-/* Keep the bottom sections locked to the same position */
-.archive-card-bottom,
-.archive-card-footer {
-    flex-shrink: 0;
-}
-
-/* Make File 01's content spacing match File 02 */
-.archive-card-main h2 {
-    margin-bottom: 20px;
-}
-
-/* Make the two-column cards visually consistent */
-.archive-files > .archive-card {
-    align-self: stretch;
+    .archive-card-content h2,
+    .archive-card-main h2 {
+        font-size: 40px;
+    }
 }
