@@ -56,15 +56,15 @@
             </h1>
 
             <p>
-                73 photographs recovered from various sources.
-                The authenticity of several exhibits has been
-                questioned.
+                73 photographs recovered from the archives.
+                Some are innocent. Some are incriminating.
+                A few should probably have remained deleted.
             </p>
 
         </section>
 
 
-        <!-- FILTER -->
+        <!-- DATABASE INFO -->
 
         <section class="evidence-controls">
 
@@ -88,6 +88,103 @@
         </section>
 
 
+        <!-- EXHIBIT MODAL -->
+
+        <div
+            id="exhibit-modal"
+            class="exhibit-modal"
+            aria-hidden="true"
+        >
+
+            <div class="modal-backdrop"></div>
+
+
+            <div class="exhibit-viewer">
+
+
+                <!-- CLOSE -->
+
+                <button
+                    class="modal-close"
+                    id="modal-close"
+                    aria-label="Close exhibit"
+                >
+                    ×
+                </button>
+
+
+                <!-- TOP -->
+
+                <div class="viewer-top">
+
+                    <span id="viewer-number">
+                        EXHIBIT 001
+                    </span>
+
+                    <span id="viewer-classification">
+                        CLASSIFICATION: NATURAL HABITAT
+                    </span>
+
+                </div>
+
+
+                <!-- IMAGE -->
+
+                <div class="viewer-image">
+
+                    <img
+                        id="viewer-image"
+                        src=""
+                        alt=""
+                    >
+
+                </div>
+
+
+                <!-- INFORMATION -->
+
+                <div class="viewer-info">
+
+                    <div>
+
+                        <p class="viewer-label">
+                            FIELD NOTES
+                        </p>
+
+                        <p
+                            id="viewer-notes"
+                            class="viewer-notes"
+                        >
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <!-- NAVIGATION -->
+
+                <div class="viewer-navigation">
+
+                    <button id="previous-exhibit">
+                        ← PREVIOUS
+                    </button>
+
+                    <span id="viewer-counter">
+                        01 / 73
+                    </span>
+
+                    <button id="next-exhibit">
+                        NEXT →
+                    </button>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
         <!-- FOOTER -->
 
         <footer class="evidence-footer">
@@ -108,17 +205,401 @@
 
     <script>
 
-        const gallery = document.getElementById("evidence-grid");
+        /* =========================================
+           EXHIBIT DATABASE
+           ========================================= */
 
-        const totalPhotos = 73;
+        const exhibits = [
 
-        for (let i = 1; i <= totalPhotos; i++) {
+            {
+                classification: "NATURAL HABITAT",
+                notes: "Subject appears to have entered sleep mode. Further investigation was deemed unnecessary."
+            },
 
-            const number = String(i).padStart(3, "0");
+            {
+                classification: "MIRROR EVIDENCE",
+                notes: "Subject demonstrates the ancient art of taking a mirror selfie while somehow making it look like a formal portrait."
+            },
 
-            const card = document.createElement("div");
+            {
+                classification: "SUSPICIOUSLY COMFORTABLE",
+                notes: "Subject has located a comfortable surface and appears unwilling to leave it."
+            },
 
-            card.className = "evidence-item";
+            {
+                classification: "SLEEPING BEAUTY",
+                notes: "Another confirmed sighting of the subject in his natural resting state."
+            },
+
+            {
+                classification: "CLOSE ENCOUNTER",
+                notes: "Subject appears to have been caught at an unusually close range. The camera operator showed no mercy."
+            },
+
+            {
+                classification: "DIGITAL EVIDENCE",
+                notes: "A mysterious transmission from the archives. Context remains unavailable."
+            },
+
+            {
+                classification: "SOCIAL ACTIVITY",
+                notes: "Subject observed participating in a group outing. Behaviour appears relatively normal. Suspicious."
+            },
+
+            {
+                classification: "DOMESTIC INCIDENT",
+                notes: "Multiple individuals and one suspiciously comfortable subject have been documented."
+            },
+
+            {
+                classification: "FIELD EXPEDITION",
+                notes: "Subject ventures outdoors with witnesses. Nobody appears to know what is happening."
+            },
+
+            {
+                classification: "IDENTITY CONCEALED",
+                notes: "Subject has deployed a fan as a tactical facial obstruction. Effective, but unnecessary."
+            },
+
+            {
+                classification: "PUBLIC NOTICE",
+                notes: "Subject appears to be making an official announcement. The administration has not confirmed its contents."
+            },
+
+            {
+                classification: "DIGITAL SURVEILLANCE",
+                notes: "Evidence suggests the subject was captured mid-incident. The original circumstances remain classified."
+            },
+
+            {
+                classification: "UNEXPECTED ATHLETICISM",
+                notes: "Subject demonstrates movement that investigators were not prepared to document."
+            },
+
+            {
+                classification: "REPEAT OFFENCE",
+                notes: "Same location. Same energy. New evidence. The investigation continues."
+            },
+
+            {
+                classification: "SEASONAL EVIDENCE",
+                notes: "Subject spotted near an unnecessarily large Christmas tree. Seasonal involvement confirmed."
+            },
+
+            {
+                classification: "DOCUMENTED SUSPICION",
+                notes: "Subject and accomplice appear to be examining something of considerable importance. Nobody knows what."
+            },
+
+            {
+                classification: "ARCHIVAL DISPLAY",
+                notes: "Subject has been formally incorporated into a decorative frame. This may be the closest thing to official recognition."
+            },
+
+            {
+                classification: "HIGH-RISK ACTIVITY",
+                notes: "Subject appears to be reaching for something above his clearance level."
+            },
+
+            {
+                classification: "HISTORICAL RECORD",
+                notes: "A younger version of the subject has been recovered from the archives. The fashion department has been notified."
+            },
+
+            {
+                classification: "ACADEMIC EVIDENCE",
+                notes: "Subject is physically present in a classroom. Whether academic activity occurred remains unverified."
+            },
+
+            {
+                classification: "FLORAL INCIDENT",
+                notes: "Subject has acquired flowers and appears surprisingly pleased about it. Motive unknown."
+            },
+
+            {
+                classification: "WINTER SURVIVAL",
+                notes: "Subject has equipped himself for cold weather and appears ready to fight the climate."
+            },
+
+            {
+                classification: "RETAIL EVIDENCE",
+                notes: "Subject discovered in the presence of an excessive number of stuffed animals. No purchase records were recovered."
+            },
+
+            {
+                classification: "CAUGHT IN THE ACT",
+                notes: "Subject appears to have been interrupted mid-conversation. The investigation yielded no useful information."
+            },
+
+            {
+                classification: "FORMAL SIGHTING",
+                notes: "Subject spotted in formal attire. Investigators confirm that he does, in fact, own shirts that button."
+            },
+
+            {
+                classification: "CEREMONIAL RECORD",
+                notes: "Subject photographed during an apparently formal occasion. The surrounding witnesses remain suspiciously composed."
+            },
+
+            {
+                classification: "DINING EVIDENCE",
+                notes: "Subject observed at a table with associates. Food appears to be involved."
+            },
+
+            {
+                classification: "FRAMED",
+                notes: "Subject has once again been placed inside a decorative frame. At this point, this appears intentional."
+            },
+
+            {
+                classification: "PROXIMITY WARNING",
+                notes: "Camera operator has entered the subject's personal space with absolutely no regard for personal boundaries."
+            },
+
+            {
+                classification: "CLASSROOM SURVEILLANCE",
+                notes: "Subject appears to be conducting important academic business. The laptop provides no further evidence."
+            },
+
+            {
+                classification: "PROFESSIONAL CONDUCT",
+                notes: "Subject appears to be attending to serious matters. The investigators have chosen not to interrupt."
+            },
+
+            {
+                classification: "TACTICAL DEPLOYMENT",
+                notes: "Subject appears to have acquired a prop and immediately decided to use it for photographic purposes."
+            },
+
+            {
+                classification: "FIELD OPERATION",
+                notes: "Subject photographed during an outdoor encounter. The opposing party appears to be participating willingly."
+            },
+
+            {
+                classification: "REPEAT FIELD OPERATION",
+                notes: "Evidence confirms that whatever happened in Exhibit 033 happened again."
+            },
+
+            {
+                classification: "GROUP SURVEILLANCE",
+                notes: "Three individuals. One subject. One camera. Nobody appears entirely innocent."
+            },
+
+            {
+                classification: "ID EXPERIMENT",
+                notes: "Subject has been equipped with an aggressively unnecessary prop. The disguise is not convincing."
+            },
+
+            {
+                classification: "CASUAL EVIDENCE",
+                notes: "Subject appears unusually relaxed. Investigators suspect this was before something went wrong."
+            },
+
+            {
+                classification: "TRAVEL RECORD",
+                notes: "Subject documented outdoors at an apparently scenic location. Surprisingly legitimate behaviour."
+            },
+
+            {
+                classification: "CLOSE-RANGE SURVEILLANCE",
+                notes: "Subject has discovered the camera and appears ready to interrogate it."
+            },
+
+            {
+                classification: "ARTISTIC EVIDENCE",
+                notes: "Subject has acquired facial decoration. Whether this was voluntary remains unknown."
+            },
+
+            {
+                classification: "EXTREME CLOSE-UP",
+                notes: "Camera operator has once again violated the recommended minimum distance. Subject remains cooperative."
+            },
+
+            {
+                classification: "UNEXPECTED ANGLE",
+                notes: "Evidence captured from a perspective that raises more questions than it answers."
+            },
+
+            {
+                classification: "GROUP ACTIVITY",
+                notes: "Multiple witnesses have been documented alongside the subject. Collective responsibility is suspected."
+            },
+
+            {
+                classification: "EXPEDITION RECORD",
+                notes: "Subject photographed alongside several associates during what appears to be an outdoor operation."
+            },
+
+            {
+                classification: "CASUAL SUSPICION",
+                notes: "Subject appears to be minding his own business. This cannot be independently verified."
+            },
+
+            {
+                classification: "BOTANICAL INCIDENT",
+                notes: "Subject appears to have encountered a plant and immediately incorporated it into the investigation."
+            },
+
+            {
+                classification: "FORMAL PROCEEDINGS",
+                notes: "Subject photographed in formalwear while holding what appears to be a beverage. Very official."
+            },
+
+            {
+                classification: "SOCIAL EVIDENCE",
+                notes: "Subject documented with an associate. Both appear suspiciously pleased with themselves."
+            },
+
+            {
+                classification: "SOCIAL EVIDENCE II",
+                notes: "Subject and associate appear to be posing for an official record. The confidence is difficult to justify."
+            },
+
+            {
+                classification: "REPEAT OFFENCE",
+                notes: "Yet another formal photograph has been recovered. The subject appears to have become comfortable with the process."
+            },
+
+            {
+                classification: "CULTURAL RECORD",
+                notes: "Subject appears in traditional attire during a staged performance or celebration."
+            },
+
+            {
+                classification: "CULTURAL RECORD II",
+                notes: "Same operation, additional evidence. Subject appears significantly more committed this time."
+            },
+
+            {
+                classification: "TRANSIT SURVEILLANCE",
+                notes: "Subject photographed in transit. He appears to be questioning several life choices."
+            },
+
+            {
+                classification: "HISTORICAL ARCHIVE",
+                notes: "A very young subject has been recovered from the records. Evidence confirms that the operation has been ongoing for some time."
+            },
+
+            {
+                classification: "SIGNAL FAILURE",
+                notes: "Image quality has deteriorated significantly. Subject remains identifiable as approximately human."
+            },
+
+            {
+                classification: "DINING INCIDENT",
+                notes: "Subject appears to have been interrupted during a meal. The camera was apparently more important than his dignity."
+            },
+
+            {
+                classification: "RESTING STATE",
+                notes: "Subject has once again been located horizontally. This pattern is becoming statistically significant."
+            },
+
+            {
+                classification: "FAMILY RECORD",
+                notes: "Subject documented alongside another individual in what appears to be a family photograph."
+            },
+
+            {
+                classification: "OBJECT ACQUISITION",
+                notes: "Subject has acquired several small objects and appears extremely pleased with the development."
+            },
+
+            {
+                classification: "COSTUME EVIDENCE",
+                notes: "Subject photographed in an outfit that raises several unanswered questions."
+            },
+
+            {
+                classification: "MIRROR SURVEILLANCE",
+                notes: "Subject has once again discovered a mirror and immediately understood its intended purpose."
+            },
+
+            {
+                classification: "DRAMATIC LIGHTING",
+                notes: "Subject photographed under unusually cinematic lighting. The circumstances remain unknown."
+            },
+
+            {
+                classification: "PUBLIC APPEARANCE",
+                notes: "Subject appears in a formal event setting. Promotional evidence has been recovered."
+            },
+
+            {
+                classification: "FACIAL DISTORTION",
+                notes: "Camera technology has been used irresponsibly. Subject appears delighted by the result."
+            },
+
+            {
+                classification: "EXTREME CLOSE-UP II",
+                notes: "Another close-range encounter. Investigators recommend backing away from the camera."
+            },
+
+            {
+                classification: "DOCUMENTARY PORTRAIT",
+                notes: "Subject appears unusually photogenic. This evidence may have been planted."
+            },
+
+            {
+                classification: "CROSS-SPECIES COLLABORATION",
+                notes: "Subject appears alongside a feline associate. The cat appears to hold greater authority."
+            },
+
+            {
+                classification: "OBJECTIVE UNCLEAR",
+                notes: "Subject appears to be holding an unidentified object while wearing an outfit that demands further investigation."
+            },
+
+            {
+                classification: "SLEEPING INCIDENT II",
+                notes: "Subject has once again surrendered to gravity. The archives contain an alarming number of these."
+            },
+
+            {
+                classification: "FORMAL RECORD",
+                notes: "Subject appears alongside an associate in traditional attire. Both appear fully aware of the camera."
+            },
+
+            {
+                classification: "FIELD OPERATIONS II",
+                notes: "Subject photographed outdoors during another unexplained excursion."
+            },
+
+            {
+                classification: "HISTORICAL RECONSTRUCTION",
+                notes: "The archives contain evidence suggesting that Malhar's lore extends beyond ordinary human history."
+            },
+
+            {
+                classification: "FINAL EXHIBIT",
+                notes: "Multiple witnesses have been assembled. Subject appears extremely happy. Investigation concludes that this may actually be one of the wholesome ones."
+            }
+
+        ];
+
+
+        /* =========================================
+           CREATE GALLERY
+           ========================================= */
+
+        const gallery =
+            document.getElementById("evidence-grid");
+
+
+        exhibits.forEach((exhibit, index) => {
+
+            const number =
+                String(index + 1).padStart(3, "0");
+
+
+            const card =
+                document.createElement("div");
+
+
+            card.className =
+                "evidence-item";
+
 
             card.innerHTML = `
 
@@ -128,7 +609,6 @@
                         src="assets/photos/photo_${number}.jpeg"
                         alt="Exhibit ${number}"
                         loading="lazy"
-                        onerror="this.parentElement.parentElement.style.display='none';"
                     >
 
                     <span class="exhibit-number">
@@ -140,20 +620,261 @@
                 <div class="evidence-caption">
 
                     <span>
-                        EXHIBIT ${number}
+                        ${exhibit.classification}
                     </span>
 
                     <span>
-                        STATUS: QUESTIONABLE
+                        VIEW →
                     </span>
 
                 </div>
 
             `;
 
+
+            card.addEventListener(
+                "click",
+                () => openExhibit(index)
+            );
+
+
             gallery.appendChild(card);
 
+        });
+
+
+        /* =========================================
+           MODAL ELEMENTS
+           ========================================= */
+
+        const modal =
+            document.getElementById("exhibit-modal");
+
+        const viewerImage =
+            document.getElementById("viewer-image");
+
+        const viewerNumber =
+            document.getElementById("viewer-number");
+
+        const viewerClassification =
+            document.getElementById("viewer-classification");
+
+        const viewerNotes =
+            document.getElementById("viewer-notes");
+
+        const viewerCounter =
+            document.getElementById("viewer-counter");
+
+
+        let currentExhibit = 0;
+
+
+        /* =========================================
+           OPEN EXHIBIT
+           ========================================= */
+
+        function openExhibit(index) {
+
+            currentExhibit = index;
+
+            updateViewer();
+
+            modal.classList.add("active");
+
+            modal.setAttribute(
+                "aria-hidden",
+                "false"
+            );
+
+            document.body.classList.add(
+                "modal-open"
+            );
+
         }
+
+
+        /* =========================================
+           UPDATE VIEWER
+           ========================================= */
+
+        function updateViewer() {
+
+            const exhibit =
+                exhibits[currentExhibit];
+
+
+            const number =
+                String(currentExhibit + 1)
+                    .padStart(3, "0");
+
+
+            viewerImage.src =
+                `assets/photos/photo_${number}.jpeg`;
+
+
+            viewerImage.alt =
+                `Exhibit ${number}`;
+
+
+            viewerNumber.textContent =
+                `EXHIBIT ${number}`;
+
+
+            viewerClassification.textContent =
+                `CLASSIFICATION: ${exhibit.classification}`;
+
+
+            viewerNotes.textContent =
+                exhibit.notes;
+
+
+            viewerCounter.textContent =
+                `${number} / 073`;
+
+        }
+
+
+        /* =========================================
+           CLOSE
+           ========================================= */
+
+        function closeExhibit() {
+
+            modal.classList.remove("active");
+
+            modal.setAttribute(
+                "aria-hidden",
+                "true"
+            );
+
+            document.body.classList.remove(
+                "modal-open"
+            );
+
+        }
+
+
+        /* =========================================
+           PREVIOUS
+           ========================================= */
+
+        function previousExhibit() {
+
+            currentExhibit--;
+
+            if (currentExhibit < 0) {
+
+                currentExhibit =
+                    exhibits.length - 1;
+
+            }
+
+            updateViewer();
+
+        }
+
+
+        /* =========================================
+           NEXT
+           ========================================= */
+
+        function nextExhibit() {
+
+            currentExhibit++;
+
+            if (
+                currentExhibit >=
+                exhibits.length
+            ) {
+
+                currentExhibit = 0;
+
+            }
+
+            updateViewer();
+
+        }
+
+
+        /* =========================================
+           BUTTONS
+           ========================================= */
+
+        document
+            .getElementById("modal-close")
+            .addEventListener(
+                "click",
+                closeExhibit
+            );
+
+
+        document
+            .getElementById("previous-exhibit")
+            .addEventListener(
+                "click",
+                previousExhibit
+            );
+
+
+        document
+            .getElementById("next-exhibit")
+            .addEventListener(
+                "click",
+                nextExhibit
+            );
+
+
+        /* =========================================
+           BACKDROP CLOSE
+           ========================================= */
+
+        document
+            .querySelector(".modal-backdrop")
+            .addEventListener(
+                "click",
+                closeExhibit
+            );
+
+
+        /* =========================================
+           KEYBOARD CONTROLS
+           ========================================= */
+
+        document.addEventListener(
+            "keydown",
+            function(event) {
+
+                if (
+                    !modal.classList.contains(
+                        "active"
+                    )
+                ) {
+                    return;
+                }
+
+
+                if (event.key === "Escape") {
+
+                    closeExhibit();
+
+                }
+
+
+                if (event.key === "ArrowLeft") {
+
+                    previousExhibit();
+
+                }
+
+
+                if (event.key === "ArrowRight") {
+
+                    nextExhibit();
+
+                }
+
+            }
+        );
 
     </script>
 
