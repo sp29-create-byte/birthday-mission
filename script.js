@@ -5,11 +5,11 @@ const clues = [
 
         text: `
             Where shadows sleep and lost things hide,<br><br>
-            Look beneath the place where you rest at night. 👀
+            Look around the place where you rest at night. 👀
         `,
 
         answers: [
-            "under the bed",
+            "pillow",
             "under bed",
             "bed"
         ]
