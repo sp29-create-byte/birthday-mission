@@ -2417,3 +2417,29 @@ body.modal-open {
         gap: 10px;
     }
 }
+
+/* =========================================================
+   FINAL AWARD COLOUR FIX
+   ========================================================= */
+
+.award-card,
+.award-card-featured {
+    border-color: #292929;
+}
+
+.award-card::before,
+.award-card-featured::before {
+    background: #ff3b3b;
+}
+
+.award-card-featured {
+    border-color: #292929;
+}
+
+.award-card-featured .award-category {
+    color: #ff3b3b;
+}
+
+.award-card-featured .award-number {
+    color: #555;
+}
