@@ -422,6 +422,419 @@ footer p {
         gap: 8px;
     }
 
+    /* =========================================
+   TREASURE HUNT
+   ========================================= */
+
+.hunt-page {
+    min-height: 100vh;
+    max-width: 1000px;
+    margin: auto;
+    padding: 40px 35px 70px;
+}
+
+
+/* HEADER */
+
+.hunt-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    border-bottom: 1px solid #252525;
+
+    padding-bottom: 20px;
+}
+
+.hunt-title {
+    font-size: 11px;
+    letter-spacing: 3px;
+    color: #777;
+    margin-top: 8px;
+}
+
+.progress-text {
+    font-size: 13px;
+    letter-spacing: 2px;
+    color: #ff3b3b;
+}
+
+
+/* PROGRESS */
+
+.hunt-progress {
+    margin: 45px 0 80px;
+}
+
+.progress-bar {
+    width: 100%;
+    height: 3px;
+    background: #202020;
+}
+
+#progress-fill {
+    width: 0%;
+    height: 100%;
+    background: #ff3b3b;
+    transition: width 0.5s ease;
+}
+
+#progress-label {
+    color: #555;
+    font-size: 10px;
+    letter-spacing: 2px;
+    margin-top: 12px;
+}
+
+
+/* CLUE */
+
+.clue-container {
+    max-width: 800px;
+    margin: auto;
+}
+
+.clue-label {
+    color: #ff3b3b;
+    font-size: 12px;
+    font-weight: bold;
+    letter-spacing: 4px;
+    margin-bottom: 20px;
+}
+
+.clue-container h1 {
+    font-size: clamp(45px, 8vw, 90px);
+    line-height: 0.9;
+    letter-spacing: -3px;
+    margin-bottom: 45px;
+}
+
+
+/* CLUE CARD */
+
+.clue-card {
+    position: relative;
+
+    background: #111;
+
+    border: 1px solid #292929;
+
+    padding: 50px 45px;
+
+    margin-bottom: 45px;
+}
+
+.clue-card::before {
+    content: "CLASSIFIED CLUE";
+
+    position: absolute;
+
+    top: 15px;
+    right: 20px;
+
+    color: #333;
+
+    font-size: 9px;
+    letter-spacing: 2px;
+}
+
+#clue-text {
+    color: #d0d0d0;
+
+    font-size: 20px;
+
+    line-height: 1.8;
+
+    max-width: 650px;
+}
+
+
+/* ANSWER */
+
+.answer-section {
+    max-width: 700px;
+}
+
+.answer-section label {
+    display: block;
+
+    color: #777;
+
+    font-size: 10px;
+
+    letter-spacing: 2px;
+
+    margin-bottom: 12px;
+}
+
+.answer-row {
+    display: flex;
+    gap: 10px;
+}
+
+.answer-row input {
+    flex: 1;
+
+    background: #0d0d0d;
+
+    border: 1px solid #333;
+
+    color: white;
+
+    padding: 16px 18px;
+
+    font-family: inherit;
+
+    font-size: 16px;
+
+    outline: none;
+}
+
+.answer-row input:focus {
+    border-color: #ff3b3b;
+}
+
+.answer-row button {
+    border: none;
+
+    background: #ff3b3b;
+
+    color: white;
+
+    padding: 0 25px;
+
+    font-weight: bold;
+
+    letter-spacing: 1px;
+
+    cursor: pointer;
+}
+
+.answer-row button:hover {
+    background: white;
+    color: black;
+}
+
+
+/* FEEDBACK */
+
+#feedback {
+    min-height: 25px;
+
+    margin-top: 15px;
+
+    font-size: 12px;
+
+    letter-spacing: 1px;
+}
+
+.wrong-answer {
+    color: #ff3b3b;
+}
+
+
+/* SUCCESS */
+
+.success-box {
+    display: none;
+
+    margin-top: 35px;
+
+    border-left: 3px solid #ff3b3b;
+
+    background: #111;
+
+    padding: 25px 30px;
+}
+
+.success-box.show {
+    display: block;
+
+    animation: reveal 0.4s ease;
+}
+
+.success-title {
+    color: #ff3b3b;
+
+    font-size: 12px;
+
+    font-weight: bold;
+
+    letter-spacing: 2px;
+
+    margin-bottom: 15px;
+}
+
+#success-message {
+    color: #aaa;
+
+    line-height: 1.6;
+
+    margin-bottom: 20px;
+}
+
+.next-button {
+    background: transparent;
+
+    border: 1px solid #555;
+
+    color: white;
+
+    padding: 12px 20px;
+
+    font-size: 11px;
+
+    font-weight: bold;
+
+    letter-spacing: 1px;
+
+    cursor: pointer;
+}
+
+.next-button:hover {
+    background: white;
+    color: black;
+}
+
+
+/* COMPLETE */
+
+.mission-complete {
+    text-align: center;
+
+    padding: 80px 0;
+}
+
+.mission-complete h1 {
+    font-size: clamp(55px, 10vw, 110px);
+
+    line-height: 0.88;
+
+    letter-spacing: -4px;
+
+    margin: 25px 0 35px;
+}
+
+.complete-text {
+    color: #aaa;
+
+    font-size: 20px;
+
+    margin-bottom: 50px;
+}
+
+.completion-stats {
+    max-width: 500px;
+
+    margin: auto auto 50px;
+
+    border-top: 1px solid #252525;
+}
+
+.completion-stats p {
+    display: flex;
+
+    justify-content: space-between;
+
+    border-bottom: 1px solid #252525;
+
+    padding: 18px 0;
+
+    color: #aaa;
+
+    font-size: 12px;
+
+    letter-spacing: 1px;
+}
+
+.completion-stats span {
+    color: #555;
+}
+
+.final-note {
+    color: #666;
+
+    line-height: 1.7;
+
+    margin-bottom: 35px;
+}
+
+
+/* FOOTER */
+
+.hunt-footer {
+    margin-top: 100px;
+
+    border-top: 1px solid #202020;
+
+    padding-top: 20px;
+
+    text-align: center;
+}
+
+.hunt-footer p {
+    color: #333;
+
+    font-size: 9px;
+
+    letter-spacing: 2px;
+}
+
+
+/* ANIMATION */
+
+@keyframes reveal {
+
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+}
+
+
+/* MOBILE */
+
+@media (max-width: 650px) {
+
+    .hunt-page {
+        padding: 25px 20px 50px;
+    }
+
+    .hunt-progress {
+        margin: 35px 0 60px;
+    }
+
+    .clue-container h1 {
+        letter-spacing: -2px;
+    }
+
+    .clue-card {
+        padding: 45px 25px 30px;
+    }
+
+    #clue-text {
+        font-size: 17px;
+    }
+
+    .answer-row {
+        flex-direction: column;
+    }
+
+    .answer-row button {
+        padding: 15px;
+    }
+
+    .mission-complete h1 {
+        letter-spacing: -2px;
+    }
+
+}
     .warning-panel {
         padding: 20px;
     }
