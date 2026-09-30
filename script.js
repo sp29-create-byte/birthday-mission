@@ -2,83 +2,146 @@ const clues = [
 
     {
         title: "YOUR FIRST LOCATION",
+
         text: `
             Where shadows sleep and lost things hide,<br><br>
             Look beneath the place where you rest at night. 👀
         `,
-        answer: "under the bed"
+
+        answers: [
+            "under the bed",
+            "under bed",
+            "bed"
+        ]
     },
+
 
     {
         title: "A TRAINER NEEDS THEIR BRAIN",
+
         text: `
             A Trainer needs their brain to survive the day…<br><br>
             Check where you carry your college life away. 🎓
         `,
-        answer: "college bag"
+
+        answers: [
+            "college bag",
+            "bag"
+        ]
     },
+
 
     {
         title: "THE LEGENDARY BEAST",
+
         text: `
             A legendary beast has found a cave,<br><br>
             Beneath the cardboard, your treasure awaits. 🐉
         `,
-        answer: "lulu's tent"
+
+        answers: [
+            "lulu's tent",
+            "lulus tent",
+            "lulu tent",
+            "tent"
+        ]
     },
+
 
     {
         title: "KITCHEN SECRETS",
+
         text: `
             Where culinary legends are supposedly made,<br><br>
             Search where kitchen secrets are stored away. 👨‍🍳
         `,
-        answer: "kitchen cabinet"
+
+        answers: [
+            "kitchen cabinet",
+            "cabinet",
+            "kitchen"
+        ]
     },
+
 
     {
         title: "THE SECRET DRAWER",
+
         text: `
             Where battles with books are fought,<br><br>
             Search the secret place where small things get lost. 📚
         `,
-        answer: "study table drawer"
+
+        answers: [
+            "study table drawer",
+            "table drawer",
+            "drawer"
+        ]
     },
+
 
     {
         title: "A THOUSAND STORIES",
+
         text: `
             Hundreds of stories stand in a row,<br><br>
             Somewhere among them, your next clue will show. 📖
         `,
-        answer: "bookshelf"
+
+        answers: [
+            "bookshelf",
+            "book shelf",
+            "shelf",
+            "books"
+        ]
     },
+
 
     {
         title: "STAY COOL",
+
         text: `
             Why fidget when you're already cool? 😎<br><br>
             Look beneath the thing that keeps you chilled. ❄️
         `,
-        answer: "under the cooler"
+
+        answers: [
+            "under the cooler",
+            "under cooler",
+            "cooler"
+        ]
     },
+
 
     {
         title: "BATTLE OUTFITS",
+
         text: `
             Before every adventure, a Trainer must dress.<br><br>
             Search where your battle outfits rest. 👕
         `,
-        answer: "clothes cupboard"
+
+        answers: [
+            "clothes cupboard",
+            "cupboard",
+            "clothes"
+        ]
     },
+
 
     {
         title: "HOT AND BRIGHT",
+
         text: `
             Your next destination is hot and bright,<br><br>
             Where things go in… and come out just right. 🔥
         `,
-        answer: "air fryer"
+
+        answers: [
+            "air fryer",
+            "airfryer",
+            "fryer"
+        ]
     }
 
 ];
@@ -125,6 +188,7 @@ function loadClue() {
     document.getElementById("success-box").classList.remove("show");
 
     document.getElementById("answer").focus();
+
 }
 
 
@@ -136,7 +200,7 @@ function normaliseAnswer(answer) {
 
     return answer
         .toLowerCase()
-        .replace(/[’‘]/g, "'")
+        .replace(/[’']/g, "")
         .replace(/\s+/g, " ")
         .trim();
 
@@ -154,15 +218,16 @@ function checkAnswer() {
             document.getElementById("answer").value
         );
 
-    const correctAnswer =
-        normaliseAnswer(
-            clues[currentClue].answer
+    const acceptedAnswers =
+        clues[currentClue].answers.map(
+            normaliseAnswer
         );
 
     const feedback =
         document.getElementById("feedback");
 
-    if (input === correctAnswer) {
+
+    if (acceptedAnswers.includes(input)) {
 
         feedback.textContent = "";
 
@@ -181,7 +246,8 @@ function checkAnswer() {
         feedback.textContent =
             "ACCESS DENIED. Try again, Agent.";
 
-        feedback.className = "wrong-answer";
+        feedback.className =
+            "wrong-answer";
 
     }
 
@@ -201,6 +267,7 @@ function nextClue() {
         completeMission();
 
         return;
+
     }
 
     loadClue();
@@ -214,7 +281,8 @@ function nextClue() {
 
 function completeMission() {
 
-    document.getElementById("progress-fill").style.width = "100%";
+    document.getElementById("progress-fill").style.width =
+        "100%";
 
     document.querySelector(".clue-container").innerHTML = `
 
@@ -273,21 +341,27 @@ function completeMission() {
    ENTER KEY SUPPORT
    ========================================= */
 
-document.addEventListener("DOMContentLoaded", function () {
+document.addEventListener(
+    "DOMContentLoaded",
+    function () {
 
-    loadClue();
+        loadClue();
 
-    const answerInput =
-        document.getElementById("answer");
+        const answerInput =
+            document.getElementById("answer");
 
-    answerInput.addEventListener("keypress", function (event) {
+        answerInput.addEventListener(
+            "keypress",
+            function (event) {
 
-        if (event.key === "Enter") {
+                if (event.key === "Enter") {
 
-            checkAnswer();
+                    checkAnswer();
 
-        }
+                }
 
-    });
+            }
+        );
 
-});
+    }
+);
