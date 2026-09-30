@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Treasure Hunt | Operation Birthday</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <main class="hunt-page">
+
+        <!-- HEADER -->
+
+        <header class="hunt-header">
+
+            <div>
+                <p class="classified">// CLASSIFIED //</p>
+                <p class="hunt-title">OPERATION: BIRTHDAY</p>
+            </div>
+
+            <div class="progress-text">
+                <span id="progress-count">01</span> / 09
+            </div>
+
+        </header>
+
+
+        <!-- PROGRESS BAR -->
+
+        <div class="hunt-progress">
+
+            <div class="progress-bar">
+                <div id="progress-fill"></div>
+            </div>
+
+            <p id="progress-label">
+                MISSION PROGRESS: 1 / 9
+            </p>
+
+        </div>
+
+
+        <!-- CLUE -->
+
+        <section class="clue-container">
+
+            <p class="clue-label" id="clue-label">
+                CLUE 01
+            </p>
+
+            <h1 id="clue-title">
+                YOUR FIRST LOCATION
+            </h1>
+
+            <div class="clue-card">
+
+                <p id="clue-text">
+                    Loading clue...
+                </p>
+
+            </div>
+
+
+            <!-- ANSWER -->
+
+            <div class="answer-section">
+
+                <label for="answer">
+                    ENTER YOUR ANSWER
+                </label>
+
+                <div class="answer-row">
+
+                    <input
+                        type="text"
+                        id="answer"
+                        placeholder="Type the location..."
+                        autocomplete="off"
+                    >
+
+                    <button onclick="checkAnswer()">
+                        SUBMIT
+                    </button>
+
+                </div>
+
+                <p id="feedback"></p>
+
+            </div>
+
+
+            <!-- SUCCESS -->
+
+            <div id="success-box" class="success-box">
+
+                <p class="success-title">
+                    ACCESS GRANTED ✓
+                </p>
+
+                <p id="success-message"></p>
+
+                <button
+                    id="next-button"
+                    class="next-button"
+                    onclick="nextClue()"
+                >
+                    NEXT CLUE →
+                </button>
+
+            </div>
+
+        </section>
+
+
+        <!-- FOOTER -->
+
+        <footer class="hunt-footer">
+
+            <p>
+                AGENT MALHAR // OPERATION STATUS: ACTIVE
+            </p>
+
+        </footer>
+
+    </main>
+
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
