@@ -46,7 +46,7 @@ const clues = [
     },
 
     {
-        title: "KITCHEN SECRETS",
+        title: "YUMMY SECRETS",
 
         text: `
             Where culinary legends are supposedly made,<br><br>
@@ -61,7 +61,7 @@ const clues = [
     },
 
     {
-        title: "THE SECRET DRAWER",
+        title: "THE SECRET VOID",
 
         text: `
             Where battles with books are fought,<br><br>
